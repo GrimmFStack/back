@@ -19,7 +19,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
     const port = process.env.PORT || 3000;
-    await app.listen(port); // ✅ Compatible con Render
+    await app.listen(port); 
       console.log(`Aplicación corriendo en http://localhost:${port}`);
       console.log(`Documentación Swagger disponible en http://localhost:${port}/api`);
       console.log(`Documentación OpenAPI disponible en http://localhost:${port}/api-json`);
