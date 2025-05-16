@@ -18,6 +18,11 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(3000);
-}
-bootstrap();
+    const port = process.env.PORT || 3000;
+    await app.listen(port); // ✅ Compatible con Render
+      console.log(`Aplicación corriendo en http://localhost:${port}`);
+      console.log(`Documentación Swagger disponible en http://localhost:${port}/api`);
+      console.log(`Documentación OpenAPI disponible en http://localhost:${port}/api-json`);
+      console.log(`Documentación Redoc disponible en http://localhost:${port}/redoc`);
+    }
+    bootstrap();
